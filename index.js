@@ -77,4 +77,16 @@ const reject = (demoArr,iterator) => {
   return demoArr.filter ( item => iterator(item) );
 }
 
-console.log('Task 3: ',reject(demoArr, iterator)); // return an array of objects with height < 10
+console.log('Task 4: ',reject(demoArr, iterator)); // return an array of objects with height < 10
+
+/* ---------------------------------                ------------------------------------- */
+
+/*
+5. Write a function that return the element with the color 'crimson'
+*/
+
+const findColor = (demoArr, color) => {
+  return demoArr.find( item => item.color = color );
+}
+
+console.log('Task 5: ',findColor(demoArr, 'crimson'));
