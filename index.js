@@ -56,3 +56,25 @@ const filterArr = demoArr => {
 }
 
 console.log('Task 3: ',filterArr(demoArr));
+
+/* ---------------------------------                ------------------------------------- */
+
+/*
+4. Implement a function called reject, which receives an array and an iterator function.
+The iterator function receives each element in the array as a parameter and must return true or false. 
+If it returns true, the element will not be included by the parent function in the resulting array.
+If returns false it will be included.
+*/
+
+const iterator = item => {
+  if (item.distance >= 10) {
+    return false
+  };
+  return true;
+}
+
+const reject = (demoArr,iterator) => {
+  return demoArr.filter ( item => iterator(item) );
+}
+
+console.log('Task 3: ',reject(demoArr, iterator)); // return an array of objects with height < 10
