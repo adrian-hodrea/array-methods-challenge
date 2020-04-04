@@ -43,3 +43,16 @@ const calculateArea = demoArr => {
 console.log('Task 2: ',calculateArea(demoArr));
 
 /* ---------------------------------                ------------------------------------- */
+
+/*
+3. Write a function that returns a subset of the above array where the elements have an area smaller or equal to 100
+*/
+
+const filterArr = demoArr => {
+  return demoArr.filter( item => {
+    let {height, width} = item;
+    return height * width <= 100; 
+  } )
+}
+
+console.log('Task 3: ',filterArr(demoArr));
