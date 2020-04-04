@@ -90,3 +90,18 @@ const findColor = (demoArr, color) => {
 }
 
 console.log('Task 5: ',findColor(demoArr, 'crimson'));
+
+/* ---------------------------------                ------------------------------------- */
+
+/*
+6. Write a function that returns true if all elements in the array have the area > = 10, false otherwise.
+*/
+
+const areasAreBigger = (demoArr, minArea) => {
+  return demoArr.every ( item => {
+    let {height, width} = item;
+    return height * width >= minArea; 
+  })
+}
+
+console.log('Task 6: ',areasAreBigger(demoArr, 10))
