@@ -25,9 +25,21 @@ const demoArr = [
 ];
 
 const pluck = (demoArr, keyName) => {
-  return demoArr.map( item => item[keyName]);
+  return demoArr.map( item => item[keyName] );
 };
 
 console.log('Task 1: ',pluck(demoArr, 'color'));  // => ['red', 'green', 'turqoize' .......];
+
+/* ---------------------------------                ------------------------------------- */
+
+/*
+2. Implement a function that returns the area of all elements in the above array, area = height * width.
+*/
+
+const calculateArea = demoArr => {
+  return demoArr.map( ({height, width}) => height * width );
+}
+
+console.log('Task 2: ',calculateArea(demoArr));
 
 /* ---------------------------------                ------------------------------------- */
