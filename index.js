@@ -6,7 +6,7 @@
 var strArr = ['13', '2', '34', '14', '5', '86', '3.46'];
 
 const typeCastAndAdd = strArr => {
-  return strArr.map( item => Number(item) + 2 );
+  return strArr.map(item => Number(item) + 2);
 }
 
 console.log('Task 0: ', typeCastAndAdd(strArr));
@@ -16,21 +16,21 @@ console.log('Task 0: ', typeCastAndAdd(strArr));
 1. Implement a function that receives an array of objects and a key name and returns an array with all the values corresponding to the key of the objects in the array.
 */
 const demoArr = [
-  {id: 1, color: 'red', height: 15, width: 20, distance: 10},
-  {id: 2, color: 'green', height: 5, width: 30, distance: 15},
-  {id: 3, color: 'turqoize', height: 7, width: 9, distance: 8},
-  {id: 4, color: 'blue', height: 2, width: 3, distance: 3},
-  {id: 5, color: 'red', height: 10, width: 10, distance: 2},
-  {id: 6, color: 'crimson', height: 7, width: 8, distance: 16},
+  { id: 1, color: 'red', height: 15, width: 20, distance: 10 },
+  { id: 2, color: 'green', height: 5, width: 30, distance: 15 },
+  { id: 3, color: 'turqoize', height: 7, width: 9, distance: 8 },
+  { id: 4, color: 'blue', height: 2, width: 3, distance: 3 },
+  { id: 5, color: 'red', height: 10, width: 10, distance: 2 },
+  { id: 6, color: 'crimson', height: 7, width: 8, distance: 16 },
 ];
 
 console.log('Demo Array: ', demoArr);
 
 const pluck = (demoArr, keyName) => {
-  return demoArr.map( item => item[keyName] );
+  return demoArr.map(item => item[keyName]);
 };
 
-console.log('Task 1: ',pluck(demoArr, 'color'));  // => ['red', 'green', 'turqoize' .......];
+console.log('Task 1: ', pluck(demoArr, 'color'));  // => ['red', 'green', 'turqoize' .......];
 
 /* ---------------------------------                ------------------------------------- */
 
@@ -39,10 +39,10 @@ console.log('Task 1: ',pluck(demoArr, 'color'));  // => ['red', 'green', 'turqoi
 */
 
 const calculateArea = demoArr => {
-  return demoArr.map( ({height, width}) => height * width );
+  return demoArr.map(({ height, width }) => height * width);
 }
 
-console.log('Task 2: ',calculateArea(demoArr));
+console.log('Task 2: ', calculateArea(demoArr));
 
 /* ---------------------------------                ------------------------------------- */
 
@@ -51,13 +51,13 @@ console.log('Task 2: ',calculateArea(demoArr));
 */
 
 const filterArr = demoArr => {
-  return demoArr.filter( item => {
-    let {height, width} = item;
-    return height * width <= 100; 
-  } )
+  return demoArr.filter(item => {
+    let { height, width } = item;
+    return height * width <= 100;
+  })
 }
 
-console.log('Task 3: ',filterArr(demoArr));
+console.log('Task 3: ', filterArr(demoArr));
 
 /* ---------------------------------                ------------------------------------- */
 
@@ -75,11 +75,11 @@ const iterator = item => {
   return true;
 }
 
-const reject = (demoArr,iterator) => {
-  return demoArr.filter( item => iterator(item) );
+const reject = (demoArr, iterator) => {
+  return demoArr.filter(item => iterator(item));
 }
 
-console.log('Task 4: ',reject(demoArr, iterator)); // return an array of objects with height < 10
+console.log('Task 4: ', reject(demoArr, iterator)); // return an array of objects with height < 10
 
 /* ---------------------------------                ------------------------------------- */
 
@@ -88,10 +88,10 @@ console.log('Task 4: ',reject(demoArr, iterator)); // return an array of objects
 */
 
 const findColor = (demoArr, color) => {
-  return demoArr.find( item => item.color === color );
+  return demoArr.find(item => item.color === color);
 }
 
-console.log('Task 5: ',findColor(demoArr, 'crimson'));
+console.log('Task 5: ', findColor(demoArr, 'crimson'));
 
 /* ---------------------------------                ------------------------------------- */
 
@@ -100,13 +100,13 @@ console.log('Task 5: ',findColor(demoArr, 'crimson'));
 */
 
 const areasAreBigger = (demoArr, minArea) => {
-  return demoArr.every( item => {
-    let {height, width} = item;
-    return height * width >= minArea; 
+  return demoArr.every(item => {
+    let { height, width } = item;
+    return height * width >= minArea;
   })
 }
 
-console.log('Task 6: ',areasAreBigger(demoArr, 10))
+console.log('Task 6: ', areasAreBigger(demoArr, 10))
 
 /* ---------------------------------                ------------------------------------- */
 
@@ -115,7 +115,22 @@ console.log('Task 6: ',areasAreBigger(demoArr, 10))
 */
 
 const atLeastOneIsOfColor = (demoArr, color) => {
-  return demoArr.some( item => item.color === color)
+  return demoArr.some(item => item.color === color)
 }
 
-console.log('Task 7: ',atLeastOneIsOfColor(demoArr, 'balarie'));
+console.log('Task 7: ', atLeastOneIsOfColor(demoArr, 'balarie'));
+
+/* ---------------------------------                ------------------------------------- */
+
+/*
+8. Write a function that returns the total distance (the sum of the element distances)
+*/
+
+const sumOfDistances = demoArr => {
+  return demoArr.reduce(
+    (acumulator, {distance}) => acumulator + distance,
+    0
+  )
+}
+
+console.log('Task 8 - Sum of distances: ', sumOfDistances(demoArr));
