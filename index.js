@@ -128,7 +128,7 @@ console.log('Task 7: ', atLeastOneIsOfColor(demoArr, 'balarie'));
 
 const sumOfDistances = demoArr => {
   return demoArr.reduce(
-    (acumulator, {distance}) => acumulator + distance,
+    (acumulator, { distance }) => acumulator + distance,
     0
   )
 }
@@ -143,7 +143,7 @@ console.log('Task 8 - Sum of distances: ', sumOfDistances(demoArr));
 
 const noColors = demoArr => {
   let colorsCounter = {};
-  demoArr.forEach(({color}) => {
+  demoArr.forEach(({ color }) => {
     if (colorsCounter[color]) {
       colorsCounter[color]++
     }
@@ -156,4 +156,24 @@ const noColors = demoArr => {
 
 console.log('Task 9 - Number of colors: ', noColors(demoArr));
 
+/* ---------------------------------                ------------------------------------- */
+
+/*
+10. Write a function that returns an array with all elements having a unique color. Any element after the first one that has a color that would repeat is not included in the array.
+*/
+
+const uniqueColors = demoArr => {
+  var uniqueColorsArray = [];
+  return demoArr.filter(({ color }) => {
+    let colorNotExists = true;
+    if (uniqueColorsArray.includes(color)) {
+      colorNotExists = false;
+    } else {
+      uniqueColorsArray.push(color);
+    }
+    return colorNotExists;
+  })
+}
+
+console.log('Unique Colors: ', uniqueColors(demoArr));
 
