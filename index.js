@@ -24,6 +24,8 @@ const demoArr = [
   {id: 6, color: 'crimson', height: 7, width: 8, distance: 16},
 ];
 
+console.log('Demo Array: ', demoArr);
+
 const pluck = (demoArr, keyName) => {
   return demoArr.map( item => item[keyName] );
 };
@@ -74,7 +76,7 @@ const iterator = item => {
 }
 
 const reject = (demoArr,iterator) => {
-  return demoArr.filter ( item => iterator(item) );
+  return demoArr.filter( item => iterator(item) );
 }
 
 console.log('Task 4: ',reject(demoArr, iterator)); // return an array of objects with height < 10
@@ -86,7 +88,7 @@ console.log('Task 4: ',reject(demoArr, iterator)); // return an array of objects
 */
 
 const findColor = (demoArr, color) => {
-  return demoArr.find( item => item.color = color );
+  return demoArr.find( item => item.color === color );
 }
 
 console.log('Task 5: ',findColor(demoArr, 'crimson'));
@@ -98,10 +100,22 @@ console.log('Task 5: ',findColor(demoArr, 'crimson'));
 */
 
 const areasAreBigger = (demoArr, minArea) => {
-  return demoArr.every ( item => {
+  return demoArr.every( item => {
     let {height, width} = item;
     return height * width >= minArea; 
   })
 }
 
 console.log('Task 6: ',areasAreBigger(demoArr, 10))
+
+/* ---------------------------------                ------------------------------------- */
+
+/*
+7. Write a function that returns true if at least one of the array elements has the color 'green';
+*/
+
+const atLeastOneIsOfColor = (demoArr, color) => {
+  return demoArr.some( item => item.color === color)
+}
+
+console.log('Task 7: ',atLeastOneIsOfColor(demoArr, 'balarie'));
