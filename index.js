@@ -134,3 +134,26 @@ const sumOfDistances = demoArr => {
 }
 
 console.log('Task 8 - Sum of distances: ', sumOfDistances(demoArr));
+
+/* ---------------------------------                ------------------------------------- */
+
+/*
+9. Write a function that returns an object that counts how many times each color appears in the object array. {red: 2, blue: 1, etc ...}
+*/
+
+const noColors = demoArr => {
+  let colorsCounter = {};
+  demoArr.forEach(({color}) => {
+    if (colorsCounter[color]) {
+      colorsCounter[color]++
+    }
+    else {
+      colorsCounter[color] = 1;
+    }
+  });
+  return colorsCounter;
+}
+
+console.log('Task 9 - Number of colors: ', noColors(demoArr));
+
+
