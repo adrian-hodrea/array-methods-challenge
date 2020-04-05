@@ -175,5 +175,20 @@ const uniqueColors = demoArr => {
   })
 }
 
-console.log('Unique Colors: ', uniqueColors(demoArr));
+console.log('Task 10 - Unique Colors: ', uniqueColors(demoArr));
 
+/* ---------------------------------                ------------------------------------- */
+
+/*
+11. Write a function which inverts two numbers.
+*/
+let a = 5, b = 8;
+
+(function switchNumbers() {
+  let switchHelper;
+  switchHelper = a;
+  a = b;
+  b = switchHelper;
+})();
+
+console.log('Task 11 - A:', a, 'B:', b);
