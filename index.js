@@ -192,3 +192,38 @@ let a = 5, b = 8;
 })();
 
 console.log('Task 11 - A:', a, 'B:', b);
+
+/* ---------------------------------                ------------------------------------- */
+
+/*
+12. Using the array below, get a variable that contains an array of objects structured like this:
+[
+  {subject: 'Chemistry', time: '9AM', teacher: 'Mr. Darnick'},
+  ...
+]
+*/
+const classes = [
+  ['Chemistry', '9AM', 'Mr. Darnick'],
+  ['Physics', '10:15AM', 'Mrs. Lithun'],
+  ['Math', '11:30AM', 'Mrs. Vitalis']
+];
+
+class TeachingClass {
+  constructor(subject, time, teacher) {
+    this.subject = subject;
+    this.time = time;
+    this.teacher = teacher;
+  }
+}
+
+const objClasses = [];
+
+const objClassesCreator = (classes, objClasses) => {
+  classes.forEach(arr => {
+    objClasses.push(new TeachingClass(...arr));
+  });
+}
+
+objClassesCreator(classes, objClasses);
+
+console.log(objClasses);
